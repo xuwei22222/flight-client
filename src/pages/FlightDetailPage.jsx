@@ -33,10 +33,7 @@ export const FlightDetailPage = () => {
     if (!getToken()) {
       openLoginModal({
         onLoginSuccess: () => {
-          toast.success('Login success!', {
-            position: toast.POSITION.TOP_RIGHT,
-            autoClose: 3000
-          });
+          toast.success('Login success!');
         }
       });
       return;
@@ -62,10 +59,7 @@ export const FlightDetailPage = () => {
           totalPrice: returnTotalPrice
         });
 
-        toast.success('Update success!', {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 3000
-        });
+        toast.success('Update success!');
 
       }
     } catch (error) {

@@ -22,10 +22,7 @@ export const MyBookingsPage = () => {
         if (!user) {
             openLoginModal({
                 onLoginSuccess: () => {
-                    toast.success('Login success!', {
-                        position: toast.POSITION.TOP_RIGHT,
-                        autoClose: 3000
-                    });
+                    toast.success('Login success!');
                 }
             });
             return;

@@ -18,10 +18,7 @@ export const BookingReviewPage = () => {
         if (!user) {
             openLoginModal({
                 onLoginSuccess: () => {
-                    toast.success('Login success!', {
-                        position: toast.POSITION.TOP_RIGHT,
-                        autoClose: 3000
-                    });
+                    toast.success('Login success!');
                 }
             });
             return;
@@ -165,11 +162,11 @@ export const BookingReviewPage = () => {
                                     </div>
                                     <div className="flex justify-between">
                                         <span className="text-gray-600">Flight Date:</span>
-                                        <span className="font-medium">{formatDate(booking.flightResponseDto?.date)}</span>
+                                        <span className="font-medium">{formatDate(booking.flightResponseDto?.departureDate)}</span>
                                     </div>
                                     <div className="flex justify-between">
                                         <span className="text-gray-600">Flight Time:</span>
-                                        <span className="font-medium">{booking.flightResponseDto?.time}</span>
+                                        <span className="font-medium">{booking.flightResponseDto?.departureTime}</span>
                                     </div>
                                 </div>
                             </div>
