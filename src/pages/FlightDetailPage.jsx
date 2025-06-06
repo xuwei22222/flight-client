@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { api, isAuthenticated } from '../services/AxiosApi';
+import { api, getToken } from '../services/AxiosApi';
 import { useAuth } from '../context/AuthContext';
 import { useBooking } from '../context/BookingContext';
 import { formatCurrency, safeParseNumber } from '../utils/utils';
@@ -30,7 +30,7 @@ export const FlightDetailPage = () => {
   }, []);
 
   const handleSubmit = async () => {
-    if (!user || isAuthenticated) {
+    if (!getToken()) {
       openLoginModal({
         onLoginSuccess: () => {
           toast.success('Login success!', {

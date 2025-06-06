@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { api, isAuthenticated } from '../services/AxiosApi';
+import { api, getToken } from '../services/AxiosApi';
 import FlightCard from '../components/FlightCard';
 import { useAuth } from '../context/AuthContext';
 import { useModal } from '../context/ModalContext';
@@ -46,7 +46,7 @@ export const SearchResultPage = () => {
     }, [state]);
 
     const handleSelectFlight = async (flight) => {
-        if (!user || isAuthenticated) {
+        if (!getToken()) {
             openLoginModal({
                 onLoginSuccess: () => {
                     toast.success('Login success!', {
