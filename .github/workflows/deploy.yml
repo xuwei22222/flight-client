@@ -3,7 +3,7 @@ name: Deploy Flight client app to AWS ECS
 on:
   push:
     branches:
-      - flight-client/xuwei_update
+      - main
 
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
